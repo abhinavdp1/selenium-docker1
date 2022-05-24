@@ -21,8 +21,8 @@ public class BaseTest {
 
         // BROWSER ==> chrome/firefox
         // HUB_HOST ==> localhost/ 10.0.1.3 /hostname
-        //String host = "selenium4.auzmor.com";
-        String host = "localhost";
+        String host = "selenium4.auzmor.com";
+        //String host = "localhost";
         MutableCapabilities dc;
 
         if(System.getProperty("BROWSER") != null &&
@@ -40,7 +40,7 @@ public class BaseTest {
 
         String testName = ctx.getCurrentXmlTest().getName();
 
-        String completeUrl = "http://" + host + "/wd/hub";
+        String completeUrl = "https://" + host + "/wd/hub";
         dc.setCapability("name",testName);
         this.driver = new RemoteWebDriver(new URL(completeUrl),dc);
     }
